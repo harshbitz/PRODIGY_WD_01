@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Responsive Landing Page</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand">Harsh<span>Kumar</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-text">
+      <p class="kicker">Web Development Intern</p>
+      <h1>Simple ideas.<br>Sharp execution.</h1>
+      <p class="sub">A responsive landing page featuring a nav bar that reacts to scroll position and hover — built with plain HTML, CSS, and JavaScript.</p>
+      <a href="#work" class="cta">See How It Works</a>
+    </div>
+    <div class="hero-shape"></div>
+  </header>
+
+  <section id="work" class="section">
+    <h2>How the Navbar Works</h2>
+    <div class="grid">
+      <div class="box">
+        <h3>01. Fixed Position</h3>
+        <p>The navbar uses <code>position: fixed</code> so it stays pinned to the top on every page and every scroll depth.</p>
+      </div>
+      <div class="box">
+        <h3>02. Scroll-Aware Style</h3>
+        <p>Past 80px of scroll, JavaScript adds a class that switches the background from transparent to solid.</p>
+      </div>
+      <div class="box">
+        <h3>03. Hover Feedback</h3>
+        <p>Each link gets an animated underline that slides in from the left on hover, powered entirely by CSS.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section alt">
+    <h2>About This Build</h2>
+    <p class="about-text">This project was built for Prodigy InfoTech's Web Development Internship — Task 01. It's fully responsive, with a collapsible menu on smaller screens.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Get In Touch</h2>
+    <p><a href="mailto:harsh@example.com">harsh@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Harsh Kumar - Task 01, Prodigy InfoTech</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

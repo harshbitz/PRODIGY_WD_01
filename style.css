@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff8f0;
+  color: #2b2420;
+  line-height: 1.6;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+  padding: 22px 0;
+}
+
+.navbar.scrolled {
+  background: #fff8f0;
+  box-shadow: 0 4px 20px rgba(43, 36, 32, 0.08);
+  padding: 12px 0;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+
+.brand {
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.4s ease;
+}
+
+.navbar.scrolled .brand {
+  color: #2b2420;
+}
+
+.brand span {
+  color: #ff6b4a;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 34px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.4s ease;
+}
+
+.navbar.scrolled .nav-links a {
+  color: #2b2420;
+}
+
+/* Underline slides in from the left on hover */
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff6b4a;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before {
+  transform: scaleX(1);
+}
+
+.nav-links a:hover {
+  color: #ff6b4a;
+}
+
+.navbar.scrolled .nav-links a:hover {
+  color: #ff6b4a;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: #ffffff;
+  transition: background 0.4s ease;
+}
+
+.navbar.scrolled .hamburger span {
+  background: #2b2420;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  background: linear-gradient(120deg, #ff6b4a, #ffb199);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 560px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.hero-text .sub {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  margin-bottom: 30px;
+  max-width: 480px;
+}
+
+.cta {
+  display: inline-block;
+  background: #2b2420;
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+}
+
+.hero-shape {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 90px 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section.alt {
+  max-width: none;
+  background: #ffeee7;
+}
+
+.section.alt .about-text {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 36px;
+  color: #2b2420;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+.box {
+  background: #ffffff;
+  border: 1px solid #f0e2d8;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.box h3 {
+  color: #ff6b4a;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+}
+
+.box code {
+  background: #ffeee7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.about-text {
+  color: #5a5049;
+  font-size: 1.05rem;
+}
+
+footer {
+  text-align: center;
+  padding: 26px;
+  background: #2b2420;
+  color: #ffcbb8;
+  font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 24px 60px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-shape {
+    display: none;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 66px;
+    right: -100%;
+    background: #fff8f0;
+    flex-direction: column;
+    width: 220px;
+    padding: 26px;
+    gap: 20px;
+    box-shadow: -2px 4px 16px rgba(0,0,0,0.1);
+    transition: right 0.35s ease;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: #2b2420 !important;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger span {
+    background: #ffffff !important;
+  }
+
+  .navbar.scrolled .hamburger span {
+    background: #2b2420 !important;
+  }
+}
